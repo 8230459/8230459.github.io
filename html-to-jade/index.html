@@ -75,19 +75,16 @@
       d($textarea0.val())
     }
   })
-
   $textarea1.click(e => {
     $(e.target).select()
     document.execCommand("copy")
   })
-
   const d = str => {
     str = str.replace(/\<\/.+?\>/g, '')
     let arr = str.split('\n')
     let slmin = 9999
     let slmins
     let _slmins
-    console.log(arr)
     if (arr.length === 1) {
       str = str.replace(/^\</, '')
       str = str.replace(/(\S)(\s{1})/, '$1(')
