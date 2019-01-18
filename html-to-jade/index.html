@@ -99,7 +99,7 @@
     arr = arr.map(v => {
       let sla = v.match(/(^\s*?)\</)
       if (!sla) {
-        if (/\S+/.test(v)) v = v.replace(/^\s*/, _slmins + '  | ')
+        if (/\S+/.test(v)) v = v.replace(/^\s*/, _slmins + '| ')
         return v
       }
       let sla2 = v.match(/^\s*?/)
