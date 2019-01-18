@@ -63,13 +63,44 @@
     <div class="title2">converter</div>
   </div>
   <div class="main">
-    <textarea></textarea>
+    <textarea>
+<Menu mode="horizontal" :theme="theme1" active-name="1">
+    <MenuItem name="1">
+        <Icon type="ios-paper"/>
+        内容管理
+    </MenuItem>
+    <MenuItem name="2">
+        <Icon type="ios-people"/>
+        用户管理
+    </MenuItem>
+    <Submenu name="3">
+        <template slot="title">
+            <Icon type="ios-stats"/>
+            统计分析
+        </template>
+        <MenuGroup title="使用">
+            <MenuItem name="3-1">新增和启动</MenuItem>
+            <MenuItem name="3-2">活跃分析</MenuItem>
+            <MenuItem name="3-3">时段分析</MenuItem>
+        </MenuGroup>
+        <MenuGroup title="留存">
+            <MenuItem name="3-4">用户留存</MenuItem>
+            <MenuItem name="3-5">流失用户</MenuItem>
+        </MenuGroup>
+    </Submenu>
+    <MenuItem name="4">
+        <Icon type="ios-construct"/>
+        综合设置
+    </MenuItem>
+</Menu>
+    </textarea>
     <textarea></textarea>
   </div>
 </div>
 <script>
   let $textarea0 = $('textarea').eq(0)
   let $textarea1 = $('textarea').eq(1)
+  d($textarea0.val())
   $textarea0.keyup(e => {
     if (e.keyCode !== 17) {
       d($textarea0.val())
@@ -79,7 +110,8 @@
     $(e.target).select()
     document.execCommand("copy")
   })
-  const d = str => {
+
+  function d(str) {
     str = str.replace(/\<\/.+?\>/g, '')
     let arr = str.split('\n')
     let slmin = 9999
