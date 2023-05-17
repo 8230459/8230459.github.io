@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0a4feb"],{"098d":function(n,e,t){"use strict";t.r(e);var l=function(){var n=this,e=n.$createElement,t=n._self._c||e;return t("box",{attrs:{gap:"30px 20px"}},[t("divider",[n._v("我是有底线的")])],1)},u=[],a=t("2455"),r=null,c=!1,p=null,s=null,i=null,o=Object(a["a"])(r,l,u,c,p,s,i);e["default"]=o.exports}}]);
