@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 const request = require('request')
 const files = [
   {'name': 'c.vue', 'path': 'e:\\test0\\'}
