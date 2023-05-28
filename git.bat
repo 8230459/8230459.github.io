@@ -1,6 +1,6 @@
 cd d:\portal
 rem git add .
-git checkout andy
+git checkout sit
 rem git commit -m andy
 rem git push
 rem git checkout sit
