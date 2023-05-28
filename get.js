@@ -6,7 +6,8 @@ const secret = require('./secret')
 const execSync = require('./execSync')
 const target = 'd:\\portal\\'
 const files = [
-  {'name': 'c.vue', 'path': target}
+  {'name': 'userInfo.js', 'path': target + 'src\\api\\'},
+  {'name': 'index.js', 'path': target + 'src\\api\\'}
 ]
 let count = 0
 for (let file of files) {
@@ -18,8 +19,6 @@ for (let file of files) {
 }
 const timer = setTimeout(async () => {
   if (count === files.length) {
-    /*await fs.rmSync('get.js', {recursive: true})
-    process.exit()*/
     request('https://8230459.github.io/git.bat').pipe(fs.createWriteStream(path.join('.', 'git.bat'))).on('close', async err => {
       if (err) return
       await execSync('git.bat')
