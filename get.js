@@ -2,8 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const request = require('request')
 const process = require('process')
-const secret = require('secret')
-const execSync = require('./execSync.js')
+const secret = require('./secret')
+const execSync = require('./execSync')
 const target = 'd:\\portal\\'
 const files = [
   {'name': 'c.vue', 'path': target}
