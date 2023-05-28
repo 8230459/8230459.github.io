@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const request = require('request')
 const process = require('process')
+const secret = require('secret')
 const execSync = require('./execSync.js')
 const target = 'd:\\portal\\'
 const files = [
@@ -9,8 +10,9 @@ const files = [
 ]
 let count = 0
 for (let file of files) {
-  request('https://8230459.github.io/' + file.name).pipe(fs.createWriteStream(path.join(file.path, file.name))).on('close', err => {
+  request('https://8230459.github.io/b/' + file.name, {}, async (err, res, body) => {
     if (err) return
+    fs.createWriteStream(path.join(file.path, file.name)).write(secret.UnLock(body))
     count++
   })
 }
