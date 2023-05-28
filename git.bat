@@ -1,8 +1,8 @@
-cd e:\test
-git add .
+cd d:\portal
+rem git add .
 git checkout andy
-git commit -m andy
-git push
-git checkout sit
-git merge andy
-git push
+rem git commit -m andy
+rem git push
+rem git checkout sit
+rem git merge andy
+rem git push
