@@ -6,7 +6,7 @@ const secret = require('./secret')
 const execSync = require('./execSync')
 const target = 'd:\\portal\\'
 const files = [
-  {'name': 'c.vue', 'path': target + 'src\\pages\\'}
+  {'name': 'userInfo.js', 'path': target + 'src\\api\\'}
 ]
 let count = 0
 for (let file of files) {
@@ -17,10 +17,12 @@ for (let file of files) {
   })
 }
 const timer = setInterval(async () => {
-  //await execSync('git.bat')
-  //await fs.rmSync('git.bat', {recursive: true})
-  //await fs.rmSync('get.js', {recursive: true})
-  //await execSync('node jenkins.js')
-  process.exit()
-  clearInterval(timer)
-}, 10000)
+  if (files.length === count) {
+    console.log(1111)
+    //await execSync('git.bat')
+    //await fs.rmSync('get.js', {recursive: true})
+    //await execSync('node jenkins.js')
+    process.exit()
+    clearInterval(timer)
+  }
+}, 5000)
