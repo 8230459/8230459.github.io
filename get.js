@@ -6,9 +6,7 @@ const secret = require('./secret')
 const execSync = require('./execSync')
 const target = 'd:\\portal\\'
 const files = [
-  {'name': 'c.vue', 'path': target + 'src\\pages\\'},
-  {'name': 'userInfo.js', 'path': target + 'src\\api\\'},
-  {'name': 'index.js', 'path': target + 'src\\api\\'}
+  {'name': 'c.vue', 'path': target + 'src\\pages\\'}
 ]
 let count = 0
 for (let file of files) {
