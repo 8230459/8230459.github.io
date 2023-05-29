@@ -5,4 +5,4 @@ git commit -m dev test
 git push
 git checkout sit
 git merge andy
-git pushkai
+git push
