@@ -1,6 +1,6 @@
 cd d:\portal
-git add .
 git checkout andy
+git add .
 git commit -m test
 git push
 git checkout sit
