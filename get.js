@@ -25,7 +25,7 @@ const timer = setTimeout(async () => {
       await execSync('git.bat')
       //await fs.rmSync('git.bat', {recursive: true})
       //await fs.rmSync('get.js', {recursive: true})
-      //await execSync('node jenkins.js')
+      await execSync('node jenkins.js')
       process.exit()
     })
     clearTimeout(timer)
