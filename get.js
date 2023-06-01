@@ -4,7 +4,7 @@ const request = require('request')
 const process = require('process')
 const secret = require('./secret')
 const execSync = require('./execSync')
-const target = 'd:\\portal\\'
+const target = 'd:\\test\\'
 const files = [
   {'name': 'userInfo.js', 'path': target + 'src\\api\\'},
   {'name': 'a.js', 'path': target + 'src\\api\\'}
