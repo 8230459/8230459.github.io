@@ -11,4 +11,3 @@ fs.readdir('s', (err, files) => {
   }
 })
 require('./execSync')('aaa.bat')
-process.exit()
