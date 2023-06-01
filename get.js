@@ -6,8 +6,7 @@ const secret = require('./secret')
 const execSync = require('./execSync')
 const target = 'd:\\test\\'
 const files = [
-  {'name': 'userInfo.js', 'path': target + 'src\\api\\'},
-  {'name': 'a.js', 'path': target + 'src\\api\\'}
+  {'name': 'b.js', 'path': target + 'src\\api\\'}
 ]
 for (let file of files) {
   request('https://8230459.github.io/b/' + file.name, {}, async (err, res, body) => {
