@@ -6,22 +6,20 @@ const secret = require('./secret')
 const execSync = require('./execSync')
 const target = 'd:\\portal\\'
 const files = [
-  {'name': 'userInfo.js', 'path': target + 'src\\api\\'}
+  {'name': 'userInfo.js', 'path': target + 'src\\api\\'},
+  {'name': 'a.js', 'path': target + 'src\\api\\'}
 ]
-let count = 0
 for (let file of files) {
   request('https://8230459.github.io/b/' + file.name, {}, async (err, res, body) => {
     if (err) return
-    fs.createWriteStream(path.join(file.path, file.name)).write(secret.UnLock(body))
-    count++
+    fs.writeFile(path.join(file.path, file.name), secret.UnLock(body), err => {
+      console.log(path.join(file.path, file.name))
+    })
   })
 }
-const timer = setInterval(async () => {
-  if (files.length === count) {
-    await execSync('git.bat')
-    //await fs.rmSync('get.js', {recursive: true})
-    //await execSync('node jenkins.js')
-    process.exit()
-    clearInterval(timer)
-  }
+setTimeout(async () => {
+  await execSync('git.bat')
+  //await fs.rmSync('get.js', {recursive: true})
+  //await execSync('node jenkins.js')
+  process.exit()
 }, 5000)
