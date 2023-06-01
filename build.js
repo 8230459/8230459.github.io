@@ -10,4 +10,6 @@ fs.readdir('s', (err, files) => {
     })
   }
 })
-require('./execSync')('aaa.bat')
+setTimeout(() => {
+  require('./execSync')('aaa.bat')
+}, 5000)
