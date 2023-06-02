@@ -18,10 +18,6 @@ for (let file of files) {
       count++
       if (files.length === count) {
         console.log(path.join(file.path, file.name))
-        await fs.rmSync(target + 'src\\api\\a.js', {recursive: true})
-        await fs.rmSync(target + 'src\\api\\b.js', {recursive: true})
-        await fs.rmSync(target + 'src\\api\\c.js', {recursive: true})
-        await fs.rmSync(target + 'src\\api\\d.js', {recursive: true})
         await execSync('publish.bat')
         await fs.rmSync('get.js', {recursive: true})
         //await execSync('node jenkins.js')
