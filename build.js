@@ -12,4 +12,4 @@ fs.readdir('s', (err, files) => {
 })
 setTimeout(() => {
   require('./execSync')('publish.bat')
-}, 5000)
+}, 15000)
