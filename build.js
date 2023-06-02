@@ -15,7 +15,7 @@ fs.rm('./b', {recursive: true}, err => {
           if (err) return
           fs.writeFile(path.join('./b/', file), secret.Lock(data.toString()), err => {
             count++
-            if (total === count) require('./execSync')('publish.bat')
+            if (total === count) require('./execSync')('build.bat')
           })
         })
       }
