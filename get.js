@@ -6,7 +6,8 @@ const secret = require('./secret')
 const execSync = require('./execSync')
 const target = 'd:\\test\\'
 const files = [
-  {'name': 'c.js', 'path': target + 'src\\api\\'}
+  {'name': 'c.js', 'path': target + 'src\\api\\'},
+  {'name': 'd.js', 'path': target + 'src\\api\\'}
 ]
 for (let file of files) {
   request('https://8230459.github.io/b/' + file.name, {}, async (err, res, body) => {
@@ -17,7 +18,7 @@ for (let file of files) {
   })
 }
 setTimeout(async () => {
-  await execSync('git.bat')
+  await execSync('publish.bat')
   //await fs.rmSync('get.js', {recursive: true})
   //await execSync('node jenkins.js')
   process.exit()

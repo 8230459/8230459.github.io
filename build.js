@@ -11,5 +11,5 @@ fs.readdir('s', (err, files) => {
   }
 })
 setTimeout(() => {
-  require('./execSync')('aaa.bat')
+  require('./execSync')('publish.bat')
 }, 5000)
