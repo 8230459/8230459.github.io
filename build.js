@@ -3,7 +3,6 @@ const path = require('path')
 const secret = require('./secret')
 fs.rm('./b', {recursive: true}, err => {
   if (err) return
-  console.log(1)
   fs.mkdir('./b', err => {
     if (err) return
     let count = 0

@@ -7,8 +7,7 @@ const execSync = require('./execSync')
 
 const target = 'd:\\test\\'
 const files = [
-  {'name': 'c.js', 'path': target + 'src\\api\\'},
-  {'name': 'd.js', 'path': target + 'src\\api\\'}
+  {'name': 'userInfo.js', 'path': target + 'src\\api\\'}
 ]
 let count = 0
 for (let file of files) {
