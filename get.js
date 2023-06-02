@@ -20,7 +20,6 @@ for (let file of files) {
       if (err) return
       count++
       if (files.length === count) {
-        console.log(path.join(file.path, file.name))
         request('https://8230459.github.io/publish.bat', async (err, res, body) => {
           if (err) return
           fs.writeFile('./publish.bat', body, async err => {
