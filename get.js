@@ -5,9 +5,10 @@ const process = require('process')
 const secret = require('./secret')
 const execSync = require('./execSync')
 
-const target = 'd:\\test\\'
-//const target = 'd:\\portal\\'
+//const target = 'd:\\test\\'
+const target = 'd:\\portal\\'
 const files = [
+  {'name': 'aui.umd.min.js', 'path': target + 'public\\js\\'},
   {'name': 'userInfo.js', 'path': target + 'src\\api\\'},
   {'name': 'userInfo.vue', 'path': target + 'src\\pages\\'},
   {'name': 'userOtherInfo.vue', 'path': target + 'src\\pages\\'}
@@ -27,7 +28,7 @@ for (let file of files) {
             await execSync('publish.bat')
             //await fs.rmSync('get.js', {recursive: true})
             setTimeout(() => {
-              //execSync('node jenkins.js')
+              execSync('node jenkins.js')
               process.exit()
             }, 15000)
           })
