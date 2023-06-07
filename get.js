@@ -9,7 +9,8 @@ const execSync = require('./execSync')
 const target = 'd:\\portal\\'
 const files = [
   {'name': 'aui.umd.min.js', 'path': target + 'public\\js\\'},
-  {'name': 'userInfo.vue', 'path': target + 'src\\pages\\'}
+  {'name': 'userInfo.vue', 'path': target + 'src\\pages\\'},
+  {'name': 'userOtherInfo.vue', 'path': target + 'src\\pages\\'}
 ]
 let count = 0
 for (let file of files) {
