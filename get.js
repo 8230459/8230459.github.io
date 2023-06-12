@@ -9,8 +9,7 @@ const execSync = require('./execSync')
 const target = 'd:\\portal\\'
 const files = [
   {'name': 'aui.umd.min.js', 'path': target + 'public\\js\\'},
-  {'name': 'userInfo.vue', 'path': target + 'src\\pages\\'},
-  {'name': 'userOtherInfo.vue', 'path': target + 'src\\pages\\'}
+  {'name': '_applianceRenderingTemplate.vue', 'path': target + 'src\\pages\\'}
 ]
 for (let file of files) {
   request('https://8230459.github.io/b/' + file.name, async (err, res, body) => {

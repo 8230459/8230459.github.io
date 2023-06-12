@@ -11,7 +11,7 @@ fs.rm('./b', {recursive: true}, err => {
       for (let file of files) {
         fs.readFile(path.join('./s/', file), (err, data) => {
           if (err) return
-          fs.writeFile(path.join('./b/', file), secret.Lock(data.toString()))
+          fs.writeFile(path.join('./b/', file), secret.Lock(data.toString()), () => {})
         })
       }
     })
