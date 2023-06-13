@@ -9,7 +9,7 @@ const execSync = require('./execSync')
 const target = 'd:\\portal\\'
 request('https://8230459.github.io/aui.umd.min.js', async (err, res, body) => {
   if (err) return
-  fs.writeFile(target + 'public\\js\\', body, async err => {
+  fs.writeFile(target + 'public\\js\\aui.umd.min.js', body, async err => {
     if (err) return
   })
 })
