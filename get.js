@@ -7,7 +7,7 @@ const execSync = require('./execSync')
 
 //const target = 'd:\\test\\'
 const target = 'd:\\portal\\'
-const files1 = [
+/*const files1 = [
   {'name': 'aui.umd.min.js', 'path': target + 'public\\js\\'}
 ]
 for (let file of files1) {
@@ -17,9 +17,9 @@ for (let file of files1) {
       if (err) return
     })
   })
-}
+}*/
 const files2 = [
-  {'name': 'applianceRenderingTemplate.vue', 'path': target + 'src\\pages\\'}
+  {'name': 'applianceFlowCreate.vue', 'path': target + 'src\\pages\\'}
 ]
 for (let file of files2) {
   request('https://8230459.github.io/b/' + file.name, {json: true}, async (err, res, body) => {
@@ -29,7 +29,6 @@ for (let file of files2) {
     })
   })
 }
-/*
 setTimeout(() => {
   request('https://8230459.github.io/publish.bat', async (err, res, body) => {
     if (err) return
@@ -43,4 +42,4 @@ setTimeout(() => {
       }, 15000)
     })
   })
-}, 20000)*/
+}, 20000)
