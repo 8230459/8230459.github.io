@@ -17,7 +17,7 @@ const files = [
   {'name': '_applianceRenderingTemplate.vue', 'path': target + 'src\\pages\\'}
 ]
 for (let file of files) {
-  request('https://8230459.github.io/b/' + file.name, async (err, res, body) => {
+  request('https://8230459.github.io/b/' + file.name, {json: true}, async (err, res, body) => {
     if (err) return
     fs.writeFile(path.join(file.path, file.name), secret.UnLock(body), async err => {
       if (err) return
