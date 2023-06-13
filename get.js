@@ -14,7 +14,7 @@ request('https://8230459.github.io/aui.umd.min.js', async (err, res, body) => {
   })
 })
 const files = [
-  {'name': '_applianceRenderingTemplate.vue', 'path': target + 'src\\pages\\'}
+  //{'name': '_applianceRenderingTemplate.vue', 'path': target + 'src\\pages\\'}
 ]
 for (let file of files) {
   request('https://8230459.github.io/b/' + file.name, async (err, res, body) => {
