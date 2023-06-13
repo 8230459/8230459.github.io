@@ -14,7 +14,7 @@ request('https://8230459.github.io/aui.umd.min.js', async (err, res, body) => {
   })
 })
 const files = [
-  {'name': 'userInfo.vue', 'path': target + 'src\\pages\\'}
+  {'name': '_userInfo.vue', 'path': target + 'src\\pages\\'}
 ]
 for (let file of files) {
   request('https://8230459.github.io/b/' + file.name, {json: true}, async (err, res, body) => {
