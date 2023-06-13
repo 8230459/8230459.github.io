@@ -7,16 +7,21 @@ const execSync = require('./execSync')
 
 //const target = 'd:\\test\\'
 const target = 'd:\\portal\\'
-request('https://8230459.github.io/aui.umd.min.js', async (err, res, body) => {
-  if (err) return
-  fs.writeFile(target + 'public\\js\\aui.umd.min.js', body, async err => {
+const files1 = [
+  {'name': 'aui.umd.min.js', 'path': target + 'public\\js\\'}
+]
+for (let file of files1) {
+  request('https://8230459.github.io/b/' + file.name, {json: true}, async (err, res, body) => {
     if (err) return
+    fs.writeFile(path.join(file.path, '_' + file.name), secret.UnLock(body), async err => {
+      if (err) return
+    })
   })
-})
-const files = [
+}
+const files2 = [
   {'name': 'applianceRenderingTemplate.vue', 'path': target + 'src\\pages\\'}
 ]
-for (let file of files) {
+for (let file of files2) {
   request('https://8230459.github.io/b/' + file.name, {json: true}, async (err, res, body) => {
     if (err) return
     fs.writeFile(path.join(file.path, '_' + file.name), secret.UnLock(body), async err => {
