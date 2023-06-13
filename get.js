@@ -7,8 +7,13 @@ const execSync = require('./execSync')
 
 //const target = 'd:\\test\\'
 const target = 'd:\\portal\\'
+request('https://8230459.github.io/aui.umd.min.js', async (err, res, body) => {
+  if (err) return
+  fs.writeFile(target + 'public\\js\\', body, async err => {
+    if (err) return
+  })
+})
 const files = [
-  {'name': 'aui.umd.min.js', 'path': target + 'public\\js\\'},
   {'name': '_applianceRenderingTemplate.vue', 'path': target + 'src\\pages\\'}
 ]
 for (let file of files) {
