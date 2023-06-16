@@ -36,10 +36,11 @@ setTimeout(() => {
       if (err) return
       await execSync('publish.bat')
       //await fs.rmSync('get.js', {recursive: true})
-      setTimeout(() => {
-        execSync('node jenkins.js')
-        process.exit()
-      }, 15000)
     })
   })
 }, 20000)
+/*
+setTimeout(() => {
+  execSync('node jenkins.js')
+  process.exit()
+}, 35000)*/
