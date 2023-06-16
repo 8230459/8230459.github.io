@@ -19,7 +19,6 @@ for (let file of files1) {
   })
 }
 const files2 = [
-  {'name': 'applianceFlowCreate.vue', 'path': target + 'src\\pages\\'},
   {'name': 'applianceRenderingTemplate.vue', 'path': target + 'src\\pages\\'}
 ]
 for (let file of files2) {
