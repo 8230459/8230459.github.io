@@ -7,4 +7,4 @@ rem git push
 rem git checkout sit
 rem git merge andy
 rem git push
-cmd.exe exit
+rem cmd.exe exit
